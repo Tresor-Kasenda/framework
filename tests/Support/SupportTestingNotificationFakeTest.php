@@ -176,6 +176,13 @@ class SupportTestingNotificationFakeTest extends TestCase
         $this->fake->assertSentTimes(NotificationStub::class, 3);
     }
 
+    public function testAssertSentTimesDefaultsToOne()
+    {
+        $this->fake->send($this->user, new NotificationStub);
+
+        $this->fake->assertSentTimes(NotificationStub::class);
+    }
+
     public function testAssertSentToTimes()
     {
         $this->fake->assertSentToTimes($this->user, NotificationStub::class, 0);

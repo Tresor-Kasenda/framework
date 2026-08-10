@@ -207,7 +207,7 @@ class NotificationFake implements Fake, NotificationDispatcher, NotificationFact
      * @param  int  $expectedCount
      * @return void
      */
-    public function assertSentTimes($notification, $expectedCount)
+    public function assertSentTimes($notification, $expectedCount = 1)
     {
         $actualCount = (new Collection($this->notifications))
             ->flatten(1)
